@@ -1,0 +1,15 @@
+<div class="container">
+  <!-- Here serverCreated and blueprintCreated works as listeners when a listener eg. serverCreated 
+  calls emit() then onServerAdded() method is called.
+  -->
+  <app-cockpit (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element *ngFor="let serverElement of serverElements" 
+      [element] = "serverElement"></app-server-element> <!-- We are able to use element property of 
+        serverElement component as a selector. We can use [aliasName] if propperty given alias name-->
+    </div>
+  </div>
+</div>

@@ -2,15 +2,21 @@
     <div class="col-xs-12">
       <p>Add new Servers or blueprints!</p>
       <label>Server Name</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerName">
+      <!-- <input type="text" class="form-control" [(ngModel)]="newServerName">
+      Instead of two way binding we can use local reference here because afterwards we are not using
+      value of newServerName. Local reference are used only in template and we can pass it to ts file 
+      through function call. It can be used on any html element and it stores the element together with 
+      all its properties. If you do console.log() in ts file you can see it stores whole element
+      -->
+      <input type="text" class="form-control" #serverNamedInput>
       <label>Server Content</label>
-      <input type="text" class="form-control" [(ngModel)]="newServerContent">
+      <input type="text" class="form-control" #serverContentInput>
       <br>
       <button style="margin:2px"
         class="btn btn-primary"
-        (click)="onAddServer()">Add Server</button>
+        (click)="onAddServer(serverNamedInput)">Add Server</button>
       <button
         class="btn btn-primary"
-        (click)="onAddBlueprint()">Add Server Blueprint</button>
+        (click)="onAddBlueprint(serverNamedInput)">Add Server Blueprint</button>
     </div>
   </div>

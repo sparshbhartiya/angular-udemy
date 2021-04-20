@@ -3,9 +3,20 @@
         >
         <div class="panel-heading">{{ element.name }}</div>
         <div class="panel-body">
-          <p>
-            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-          </p>
+          <!--
+            <p>
+        <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+        <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+      </p>
+          -->
+          <!-- Everything you place between the opening and closing tag of your own component is lost by default, is
+simply removed from the DOM, Angular will not take care about it
+There is a special directive you can add in the server-element components template here, in the place where I
+want to render the content, I can add ng-content, opening and closing again.
+It still is a directive, just using this element like selector and this serves as a hook you can place
+in your component to mark the place for Angular where it should add any content it finds between the
+opening and closing tag here
+-->
+          <ng-content></ng-content>
         </div>
       </div>

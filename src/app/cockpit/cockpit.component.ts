@@ -21,6 +21,8 @@ export class CockpitComponent implements OnInit {
   //We use @ViewChild decorator to access html element without need to pass the local reference to method
   //Pass the name of local refrence or Component(in case where a component needs to use another component)
   //inside the @ViewChild decorator.
+  //Sometimes you want to get access before we call the method and there is a nice old 
+  //decorator we can use @ViewChild
   constructor() { }
 
   ngOnInit(): void {

@@ -10,7 +10,10 @@
       -->
       <input type="text" class="form-control" #serverNamedInput>
       <label>Server Content</label>
-      <input type="text" class="form-control" #serverContentInput>
+
+      <!-- serverContentInput local reference is used by cockpit ts file through @ViewChild()-->
+      <input type="text" class="form-control" #serverContentInput> 
+
       <br>
       <button style="margin:2px"
         class="btn btn-primary"

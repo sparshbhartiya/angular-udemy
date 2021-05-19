@@ -7,8 +7,10 @@ import { Ingredient } from './shared/ingredient.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  /*
   loadedFeature = 'recipe';
   onFeatureSelected(feature: string) {
     this.loadedFeature = feature;
   }
+  */
 }
